@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- AVRO-IV-Triplane (19010-1911) LesterBoffo FDM
+
+ Specifications from Wikipedia
+     
+  Top and center span 32 ft
+  Top and center chord 3ft 6in
+  Bottom span 20 ft
+  Bottom chord 3 ft
+  Area 284 sq ft
+  Weight all up 650 lb
+  Length 30 ft
+  (Later extended to 34 ft.)
+     Engine       : 1 x Green C.4 37 h.p. 
+     Speed        : 57 km/h         (35 kts)
+-->
+     
+<airplane mass="590">
+
+  <approach speed="24" aoa="2">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.18"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+  </approach>
+  
+  <cruise speed="43" alt="0">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.95"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.99"/>
+    <control-setting axis="/controls/flight/elevator-trim" value="0.1"/>
+  </cruise>
+
+  <cockpit x="2.092" y="0" z="0.630"/>
+
+  <fuselage ax="1.28" ay="-0.0" az=" 0.0" bx="0.6" by="0.0" bz="-0.339" width="0.780" taper="0.3" midpoint="1.0"/>
+<fuselage ax="0.6" ay="0.0" az="-0.339" bx="-1.01" by="0.0" bz="-0.339" width="0.780" taper="1" midpoint="0.0"/>
+<!-- fueltank -->
+<fuselage ax="0.508" ay="0.0" az="0.79" bx="-0.33" by="0.0" bz="0.79" width="0.195" taper="45" midpoint="0.32"/>
+<!-- longerons -->
+<fuselage ax="-1.028" ay="0.0" az="-0.602" bx="-6.96" by="0.0" bz="-0.409" width="0.030" taper="1" midpoint="0.0"/>
+<fuselage ax="-1.028" ay="-0.32" az="0.017" bx="-6.96" by="-0.023" bz="0.017" width="0.030" taper="1" midpoint="0.5"/>
+<fuselage ax="-1.028" ay="0.32" az="0.017" bx="-6.96" by="0.023" bz="0.017" width="0.030" taper="1" midpoint="0.5"/>
+<!-- <fuselage ax="1.11" ay="-1.23" az="-0.237" bx="3.76" by="-1.23" bz="0.589" width="0.030" taper="1" midpoint="0.5"/>
+<fuselage ax="1.11" ay="1.23" az="-0.237" bx="3.76" by="1.23" bz="0.589" width="0.030" taper="1" midpoint="0.5"/> -->
+
+  <wing x="0.040" y="0.000" z="1.109"
+        chord="0.889" 
+        length="5.537"
+        incidence="1.0" 
+        taper="1.0" 
+        camber="0.09">
+        effectiveness="1.04" 
+        <stall aoa="11" width="3" peak="1.7"/>
+        <flap0 start="0.70" end="1.0" lift="1.41" drag="1.34"/>
+
+        <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP0" split="true"/>
+
+        <control-output control="FLAP0" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP0" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  </wing>
+
+  <mstab x="0.040" y="0.340" z="-0.12" 
+         chord="0.889" 
+         length="5.237" 
+         taper="1.0" 
+         incidence="1.0"  
+         camber="0.09">
+         effectiveness="1.04"
+         <stall aoa="11" width="3" peak="1.7"/>
+        <flap0 start="0.70" end="1.0" lift="1.41" drag="1.34"/>
+
+        <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP0" split="true"/>
+
+        <control-output control="FLAP0" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP0" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  </mstab>
+
+  <mstab x="0.040" y="0.000" z="-0.92" 
+         chord="0.889" 
+         length="3.0808" 
+         taper="1.0" 
+         incidence="1.0"  
+         camber="0.09">
+         effectiveness="1.04"
+         <stall aoa="11" width="3" peak="1.7"/>
+  </mstab>
+
+  <hstab x="-5.581" y="0.000" z="1.15" 
+         chord="2.97" 
+         length="1.219" 
+         incidence="0.92" 
+         taper="0.12" 
+         camber="0.007">
+         <stall aoa="16" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.6" drag="1.2"/> 
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-7.31" y="0.00" z="0.136" 
+         chord="0.64" 
+         length="1.190" 
+         taper="0.80">
+         <stall aoa="14" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.5" drag="1.12"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
+  </vstab>
+
+  <!--  Green C.4 35 hp aero engine from http://en.wikipedia.org/wiki/Green_C.4
+
+  General characteristics
+
+    Type: 4-cylinder, inline, upright piston engine
+    Bore: 4.13 in (105 mm)
+    Stroke: 4.73 in (120 mm)
+    Displacement: 253.44 cu in (4.158 L)
+    Length: 39 in (991 mm)
+    Width: 16 in (406 mm)
+    Height: 28 in (711 mm)
+    Dry weight: 184 lb (83 kg)
+
+Components
+
+    Valvetrain: Gear driven overhead camshaft, two valves per cylinder
+    Fuel type: Petrol
+    Cooling system: Water-cooled
+    Reduction gear: Direct drive, right-hand tractor
+
+Performance
+
+    Power output: 37 hp (23 kW) at 1,260 rpm (maximum power)
+
+    -->
+
+  <propeller  x="1.263" 
+	        y="0" 
+	        z="0.389"
+              radius="1.195"
+	        cruise-speed="43"
+	        cruise-rpm="1190"
+              cruise-alt="1000" 
+	        cruise-power="35"
+              takeoff-power="37" 
+	        takeoff-rpm="1270"
+	        mass="184" 
+	        moment="4.4">
+           <actionpt x="1.925" y="0" z="0.0"/>
+             <piston-engine eng-rpm="1270"
+                            eng-power="37"
+                            displacement="253.0"
+                            bore="4.13"
+                            stroke="4.73" 
+                            min-throttle="0.05"
+                            compression="4.16"/>
+           <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+           <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+           <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+           <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+</propeller>
+
+  
+
+  <!-- left-gears -->
+  <gear x="0.26" y="1.435" z="-1.679"
+        compression="0.09"
+        spring="1.81"
+        damp="0.17"
+        sfric="0.62"
+        dfric="0.73">
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+  <!-- right-gears -->
+  <gear x="0.26" y="-1.435" z="-1.679"
+        compression="0.09"
+        spring="1.81"
+        damp="0.17"
+        sfric="0.62"
+        dfric="0.73">
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+<!-- tailskid -->
+  <gear x="-7.15" y="0" z="-0.78"
+        skid="1"
+        compression="0.05"
+        spring="1.41"
+        damp="0.17"
+        sfric="0.92"
+        dfric="0.92">
+  </gear>
+
+  <!-- front skids -->
+  <gear x="1.709" y="1.432" z="-1.419" 
+        skid="1"
+        compression="0.02"
+        spring="3.1"
+        sfric="1.2"
+        dfric="1.3">
+  </gear>
+
+  <gear x="1.709" y="-1.432" z="-1.419" 
+        skid="1"
+        compression="0.02"
+        spring="3.1"
+        sfric="1.2"
+        dfric="1.3">
+  </gear>
+
+  <!-- fuel tank -->
+  <tank x="0.139" y="0" z="0.789" capacity="82"/>
+
+  <ballast x="0.70" y="0" z="0.1" mass="20"/>
+
+</airplane>
