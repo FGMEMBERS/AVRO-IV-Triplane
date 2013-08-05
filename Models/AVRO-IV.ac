@@ -98590,7 +98590,7 @@ kids 0
 OBJECT poly
 name "L-outwheel"
 loc 0.675002 -0.344743 -0.000230737
-texture "spoked wheel.png"
+texture "spokedwheel.png"
 numvert 671
 -0.737202 -1.19164 1.71664
 -0.730666 -1.19657 1.73509
@@ -102920,7 +102920,7 @@ kids 0
 OBJECT poly
 name "L-inwheel"
 loc 0.675002 -0.344743 -0.000230737
-texture "spoked wheel.png"
+texture "spokedwheel.png"
 numvert 671
 -0.737202 -1.19164 1.14211
 -0.730666 -1.19657 1.16055
@@ -107250,7 +107250,7 @@ kids 0
 OBJECT poly
 name "R-inwheel"
 loc 0.675002 -0.344743 -0.000230737
-texture "spoked wheel.png"
+texture "spokedwheel.png"
 numvert 671
 -0.737202 -1.19164 -1.14403
 -0.730666 -1.19657 -1.12559
@@ -111580,7 +111580,7 @@ kids 0
 OBJECT poly
 name "R-outwheel"
 loc 0.675002 -0.344743 -0.000230737
-texture "spoked wheel.png"
+texture "spokedwheel.png"
 numvert 671
 -0.737202 -1.19164 -1.71861
 -0.730666 -1.19657 -1.70017
