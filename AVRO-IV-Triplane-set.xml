@@ -20,6 +20,16 @@ version 1.0  0620813 -->
     <cockpit type="int">1</cockpit>
   </rating>
 
+  <tags>
+    <tag>avro</tag>
+    <tag>triplane</tag>
+    <tag>tail-dragger</tag>
+    <tag>fixed-gear</tag>
+    <tag>single-engine</tag>
+    <tag>piston</tag>
+    <tag>fixed-pitch</tag>
+    <tag>1910s</tag>
+  </tags>
 
   <flight-model>yasim</flight-model>
   <aero>AVRO-IV-Triplane-yasim</aero>
